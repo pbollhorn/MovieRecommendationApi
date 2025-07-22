@@ -1,6 +1,7 @@
 package dat.mappers;
 
 import dat.config.ConnectionPool;
+import dat.dto.MovieOverviewDto;
 import dat.utils.PropertyReader;
 
 import java.sql.Connection;
@@ -39,6 +40,15 @@ public class MovieMapper {
         }
 
         return movieIds;
+
+    }
+
+
+    public static MovieOverviewDto getMovieOverviewDto(int movieId) {
+
+        String sql = "SELECT id, title, originalLanguage, releaseDate, score, posterPath, rating FROM movie WHERE id = ?";
+
+        return null;
 
     }
 
