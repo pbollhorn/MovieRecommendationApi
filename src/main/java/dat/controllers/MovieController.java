@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import dat.dto.MovieOverviewDto;
+import dat.mappers.MovieMapper;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
 import org.slf4j.Logger;
@@ -60,8 +61,8 @@ public class MovieController {
 
     public void getMovieDetails(Context ctx) {
         int movieId = Integer.parseInt(ctx.pathParam("id"));
-        MovieDetailsDto movieDetails = movieDao.getMovieDetails(movieId);
-        ctx.json(movieDetails);
+        MovieDetailsDto movieDetailsDto = MovieMapper.getMovieDetailsDto(movieId);
+        ctx.json(movieDetailsDto);
     }
 
     public void updateOrCreateMovieRating(Context ctx) {
