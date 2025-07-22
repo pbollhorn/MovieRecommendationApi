@@ -18,7 +18,7 @@ import dat.entities.Movie;
 import dat.entities.Person;
 import dat.exceptions.ApiException;
 import dat.services.TmdbService;
-
+import dat.mappers.MovieMapper;
 
 public class MovieUpdateTask implements Runnable {
 
@@ -36,7 +36,7 @@ public class MovieUpdateTask implements Runnable {
         long startTime = System.currentTimeMillis();
 
         // Get all movieIds currently in database
-        Set<Integer> movieIds = movieDao.getAllMovieIds();
+        Set<Integer> movieIds = MovieMapper.getAllMovieIds();
 
         // Add new movies from TMDB
         movieIds.addAll(TmdbService.discoverMovieIds());

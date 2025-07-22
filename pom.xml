@@ -25,6 +25,9 @@
         <testcontainers.version>1.20.5</testcontainers.version>
         <restAssured.version>5.5.0</restAssured.version>
         <hamcrest>3.0</hamcrest>
+
+        <hikariCP.version>5.1.0</hikariCP.version>
+
     </properties>
 
     <repositories>
@@ -165,6 +168,17 @@
             <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${hikariCP.version}</version>
+        </dependency>
+
+
 
     </dependencies>
 
