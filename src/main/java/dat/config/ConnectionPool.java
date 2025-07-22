@@ -36,10 +36,10 @@ public class ConnectionPool {
         if (instance == null) {
             if (System.getenv("DEPLOYED") != null) {
                 ds = createHikariConnectionPool(
-                        System.getenv("JDBC_USER"),
-                        System.getenv("JDBC_PASSWORD"),
-                        System.getenv("JDBC_CONNECTION_STRING"),
-                        System.getenv("JDBC_DB"));
+                        System.getenv("DB_USERNAME"),
+                        System.getenv("DB_PASSWORD"),
+                        System.getenv("CONNECTION_STR") + "%s?currentSchema=public",
+                        System.getenv("DB_NAME"));
             } else {
                 ds = createHikariConnectionPool(user, password, url, db);
             }
