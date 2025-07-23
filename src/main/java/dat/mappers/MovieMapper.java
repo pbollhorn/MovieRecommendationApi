@@ -95,6 +95,7 @@ public class MovieMapper {
                 String backdropPath = rs.getString("backdroppath");
                 String overview = rs.getString("overview");
                 Integer runtime = rs.getInt("runtime");
+
                 return new MovieDetailsDto(id, title, originalTitle, originalLanguage, releaseDate, voteAverage, backdropPath, overview, runtime, null, null);
             }
 
